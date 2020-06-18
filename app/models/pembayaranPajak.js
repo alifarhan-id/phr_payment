@@ -1,8 +1,16 @@
 const sql = require("../config/db")
+const moment = require('moment')
+
+
+
+var tgl_bayar = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
+var durations = moment.duration(1, 'minutes');
+var tgl_expired =  moment(Date.now()).add(1, 'h').format('YYYY-MM-DD HH:mm:ss');
 
 const pembayaranPajak = function(data){
     this.no_transaksi = data.no_transaksi,
     this.npwpd = data.npwpd,
+    this.tgl_pembayaran = tgl_bayar,
     this.bulan = data.bulan,
     this.tahun = data.tahun,
     this.pendapatan = data.pendapatan,
@@ -16,7 +24,7 @@ const pembayaranPajak = function(data){
     this.kode_golongan =data.kode_golongan,
     this.status = data.status,
     this.no_arsip = data.no_arsip,
-    this.tgl_expired = data.tgl_expired,
+    this.tgl_expired = tgl_expired,
     this.keterangan = data.keterangan,
     this.keterangan_kegiatan = data.keterangan_kegiatan
 

@@ -1,0 +1,22 @@
+{
+  "name": "phr_payment",
+  "version": "1.0.0",
+  "description": "restfull api payment pajak hotel restoran",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "mysql"
+  ],
+  "author": "ali farhan",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0"
+  }
+}
